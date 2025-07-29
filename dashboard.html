@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TeknoLajme.al Admin</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>TeknoLajme</h2>
+                <span class="admin-badge">Admin</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <span class="nav-icon">📊</span> Dashboard
+                    </a></li>
+                    <li><a href="#articles" class="nav-link" data-section="articles">
+                        <span class="nav-icon">📝</span> Artikuj
+                    </a></li>
+                    <li><a href="#categories" class="nav-link" data-section="categories">
+                        <span class="nav-icon">📂</span> Kategori
+                    </a></li>
+                    <li><a href="#users" class="nav-link" data-section="users">
+                        <span class="nav-icon">👥</span> Përdorues
+                    </a></li>
+                    <li><a href="#comments" class="nav-link" data-section="comments">
+                        <span class="nav-icon">💬</span> Komente
+                    </a></li>
+                    <li><a href="#media" class="nav-link" data-section="media">
+                        <span class="nav-icon">🖼️</span> Media
+                    </a></li>
+                    <li><a href="#settings" class="nav-link" data-section="settings">
+                        <span class="nav-icon">⚙️</span> Cilësime
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👨‍💻</div>
+                    <div class="user-details">
+                        <span class="username">Admin User</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">🚪 Dil</button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="header-actions">
+                    <button class="notification-btn">🔔 <span class="notification-count">3</span></button>
+                    <button class="quick-add-btn" onclick="showQuickAdd()">➕ Shto të ri</button>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📰</div>
+                            <div class="stat-info">
+                                <h3>156</h3>
+                                <p>Artikuj të publikuar</p>
+                            </div>
+                            <div class="stat-trend positive">+12%</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">👁️</div>
+                            <div class="stat-info">
+                                <h3>45,234</h3>
+                                <p>Shikime të përgjithshme</p>
+                            </div>
+                            <div class="stat-trend positive">+8%</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <h3>1,289</h3>
+                                <p>Përdorues aktivë</p>
+                            </div>
+                            <div class="stat-trend positive">+15%</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">💬</div>
+                            <div class="stat-info">
+                                <h3>847</h3>
+                                <p>Komente</p>
+                            </div>
+                            <div class="stat-trend negative">-3%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <h3>Artikujt më të lexuar</h3>
+                            <div class="popular-articles">
+                                <div class="article-item">
+                                    <span class="article-rank">1</span>
+                                    <div class="article-info">
+                                        <h4>iPhone 16 Pro Max recensioni</h4>
+                                        <span class="article-views">12,543 shikime</span>
+                                    </div>
+                                </div>
+                                <div class="article-item">
+                                    <span class="article-rank">2</span>
+                                    <div class="article-info">
+                                        <h4>PlayStation 5 Pro vs Xbox Series X</h4>
+                                        <span class="article-views">8,921 shikime</span>
+                                    </div>
+                                </div>
+                                <div class="article-item">
+                                    <span class="article-rank">3</span>
+                                    <div class="article-info">
+                                        <h4>ChatGPT-5 çfarë të presim</h4>
+                                        <span class="article-views">7,654 shikime</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-widget">
+                            <h3>Aktiviteti i fundit</h3>
+                            <div class="recent-activity">
+                                <div class="activity-item">
+                                    <span class="activity-icon">📝</span>
+                                    <div class="activity-info">
+                                        <p><strong>Artikull i ri</strong> u publikua</p>
+                                        <span class="activity-time">2 orë më parë</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-icon">💬</span>
+                                    <div class="activity-info">
+                                        <p><strong>15 komente të reja</strong> presin moderim</p>
+                                        <span class="activity-time">3 orë më parë</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-icon">👤</span>
+                                    <div class="activity-info">
+                                        <p><strong>Përdorues i ri</strong> u regjistrua</p>
+                                        <span class="activity-time">5 orë më parë</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Articles Section -->
+                <section id="articles-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Menaxhimi i Artikujve</h2>
+                        <button class="primary-btn" onclick="showNewArticleForm()">➕ Artikull i ri</button>
+                    </div>
+                    
+                    <div class="articles-filters">
+                        <input type="text" placeholder="Kërko artikuj..." class="search-input">
+                        <select class="filter-select">
+                            <option value="all">Të gjitha</option>
+                            <option value="published">Të publikuara</option>
+                            <option value="draft">Draftet</option>
+                            <option value="pending">Në pritje</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="all">Të gjitha kategoritë</option>
+                            <option value="mobile">Mobil</option>
+                            <option value="gaming">Lojëra</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="ai">AI</option>
+                        </select>
+                    </div>
+                    
+                    <div class="articles-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Titulli</th>
+                                    <th>Kategoria</th>
+                                    <th>Statusi</th>
+                                    <th>Data</th>
+                                    <th>Shikimet</th>
+                                    <th>Veprime</th>
+                                </tr>
+                            </thead>
+                            <tbody id="articlesTableBody">
+                                <tr>
+                                    <td>
+                                        <div class="article-title">
+                                            <h4>iPhone 16 Pro Max me kamera revolucionare</h4>
+                                            <span class="article-excerpt">Apple ka prezantuar modelin e ri...</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="category-tag mobile">Mobil</span></td>
+                                    <td><span class="status-badge published">Publikuar</span></td>
+                                    <td>29 Korrik, 2025</td>
+                                    <td>12,543</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="edit-btn" onclick="editArticle(1)">✏️</button>
+                                            <button class="view-btn" onclick="viewArticle(1)">👁️</button>
+                                            <button class="delete-btn" onclick="deleteArticle(1)">🗑️</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="article-title">
+                                            <h4>PlayStation 5 Pro vjen me GPU të përditësuar</h4>
+                                            <span class="article-excerpt">Sony prezanton PlayStation 5 Pro...</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="category-tag gaming">Lojëra</span></td>
+                                    <td><span class="status-badge draft">Draft</span></td>
+                                    <td>28 Korrik, 2025</td>
+                                    <td>0</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="edit-btn" onclick="editArticle(2)">✏️</button>
+                                            <button class="view-btn" onclick="viewArticle(2)">👁️</button>
+                                            <button class="delete-btn" onclick="deleteArticle(2)">🗑️</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- Categories Section -->
+                <section id="categories-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Menaxhimi i Kategorive</h2>
+                        <button class="primary-btn" onclick="showNewCategoryForm()">➕ Kategori e re</button>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <div class="category-icon">📱</div>
+                            <h3>Mobil</h3>
+                            <p>45 artikuj</p>
+                            <div class="category-actions">
+                                <button class="edit-btn">✏️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">🎮</div>
+                            <h3>Lojëra</h3>
+                            <p>32 artikuj</p>
+                            <div class="category-actions">
+                                <button class="edit-btn">✏️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">💻</div>
+                            <h3>Hardware</h3>
+                            <p>28 artikuj</p>
+                            <div class="category-actions">
+                                <button class="edit-btn">✏️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">🤖</div>
+                            <h3>AI</h3>
+                            <p>21 artikuj</p>
+                            <div class="category-actions">
+                                <button class="edit-btn">✏️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Users Section -->
+                <section id="users-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Menaxhimi i Përdoruesve</h2>
+                        <button class="primary-btn" onclick="showNewUserForm()">➕ Përdorues i ri</button>
+                    </div>
+                    
+                    <div class="users-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Emri</th>
+                                    <th>Email</th>
+                                    <th>Roli</th>
+                                    <th>Statusi</th>
+                                    <th>Regjistrimi</th>
+                                    <th>Veprime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <div class="user-avatar">👨‍💻</div>
+                                            <span>Admin User</span>
+                                        </div>
+                                    </td>
+                                    <td>admin@teknolajme.al</td>
+                                    <td><span class="role-badge admin">Admin</span></td>
+                                    <td><span class="status-badge active">Aktiv</span></td>
+                                    <td>15 Janar, 2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="edit-btn">✏️</button>
+                                            <button class="suspend-btn">⏸️</button>
+                                            <button class="delete-btn">🗑️</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <div class="user-avatar">✍️</div>
+                                            <span>Editor User</span>
+                                        </div>
+                                    </td>
+                                    <td>editor@teknolajme.al</td>
+                                    <td><span class="role-badge editor">Editor</span></td>
+                                    <td><span class="status-badge active">Aktiv</span></td>
+                                    <td>20 Janar, 2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="edit-btn">✏️</button>
+                                            <button class="suspend-btn">⏸️</button>
+                                            <button class="delete-btn">🗑️</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal for forms -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/admin.js"></script>
+</body>
+</html>

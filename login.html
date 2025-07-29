@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - TeknoLajme.al</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>TeknoLajme.al</h1>
+                <p>Paneli i Administrimit</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="form-icon">📧</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Fjalëkalimi</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="form-icon">🔒</span>
+                    <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        Më mbaj mend
+                    </label>
+                    <a href="#" class="forgot-password">Harruat fjalëkalimin?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Hyr</span>
+                    <span class="btn-loading hidden">⏳ Duke u kyçur...</span>
+                </button>
+                
+                <div id="loginError" class="error-message hidden"></div>
+            </form>
+            
+            <div class="login-footer">
+                <p>&copy; 2025 TeknoLajme.al - Paneli i sigurt i administrimit</p>
+            </div>
+        </div>
+        
+        <div class="background-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+</body>
+</html>
